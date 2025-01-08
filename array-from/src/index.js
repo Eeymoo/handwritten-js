@@ -1,5 +1,5 @@
 module.exports = function (arrayLike, mapFn, thisArg) {
-    const rulst = [];
+    const result = [];
     if (arrayLike === null || arrayLike === undefined) {
         throw TypeError();
     }
@@ -9,7 +9,7 @@ module.exports = function (arrayLike, mapFn, thisArg) {
     for (let index = 0; index < arrayLike.length; index++) {
         const element = arrayLike[index] || undefined;
         const toMap = typeof mapFn === 'function' ? mapFn(element, index) : element;
-        rulst.push(toMap);
+        result.push(toMap);
     }
-    return rulst;
+    return result;
 }

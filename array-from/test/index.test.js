@@ -78,3 +78,39 @@ test('should return the same result as Array.from().map()', () => {
     // 断言结果相同
     expect(resultFromArrayFrom).toEqual(resultFromMap);
 });
+
+test('should return the same result as Array.from().map() for Set and Map', () => {
+    // 定义一个 Set 对象
+    const set = new Set(['x', 'y', 'z']);
+
+    // 定义映射函数
+    const mapFn = function (element) {
+        return element.toLowerCase() + '!';
+    };
+
+    // 使用 Array.from() 和 mapFn 创建新数组
+    const resultFromSetArrayFrom = Array.from(set, mapFn);
+    const resultFromSetMap = Array.from(set).map(mapFn);
+
+    // 断言结果相同
+    expect(resultFromSetArrayFrom).toEqual(resultFromSetMap);
+
+    // 定义一个 Map 对象
+    const map = new Map([
+        [1, 'A'],
+        [2, 'B'],
+        [3, 'C']
+    ]);
+
+    // 定义映射函数
+    const mapFnForMap = function ([key, value]) {
+        return `${key}: ${value.toLowerCase()}`;
+    };
+
+    // 使用 Array.from() 和 mapFnForMap 创建新数组
+    const resultFromMapArrayFrom = Array.from(map, mapFnForMap);
+    const resultFromMapMap = Array.from(map).map(mapFnForMap);
+
+    // 断言结果相同
+    expect(resultFromMapArrayFrom).toEqual(resultFromMapMap);
+});
