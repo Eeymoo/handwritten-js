@@ -1,0 +1,19 @@
+{
+  "name": "handwritten-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vest": "^5.4.6"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
